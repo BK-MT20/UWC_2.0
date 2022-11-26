@@ -1,0 +1,102 @@
+{
+  "users": [
+    {
+      "id": "637b00c38af858f9d23dd40a",
+      "username": "phiem123",
+      "password": "123456",
+      "name": "phiem",
+
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1669005507935"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1669005507935"
+        }
+      },
+      "__v": 0
+    },
+    {
+      "id": "637f49a240ce8d01325ae3d8",
+      "username": "quang123",
+      "password": "$123456",
+      "name": "quang",
+      "avartar": "https://ss-images.saostar.vn/wp700/pc/1613810558698/Facebook-Avatar_3.png",
+
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1669286306975"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1669286306975"
+        }
+      },
+      "__v": 0
+    },
+    {
+      "id": "637f4f5661f1db7887f37832",
+      "username": "trang123",
+      "password": "$123456",
+      "name": "name",
+      "avartar": "https://ss-images.saostar.vn/wp700/pc/1613810558698/Facebook-Avatar_3.png",
+
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1669287766469"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1669287766469"
+        }
+      },
+      "__v": 0
+    }
+  ],
+  "conversations": [
+    {
+      "id": "637f4f7f61f1db7887f37834",
+      "members": [
+        "637f4f5661f1db7887f37832",
+        "637b00c38af858f9d23dd40a",
+        "trang123",
+        "phiem123"
+      ],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1669287807366"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1669287807366"
+        }
+      },
+      "__v": 0
+    },
+    {
+      "id": "637f4f9261f1db7887f37836",
+      "members": [
+        "637f49a240ce8d01325ae3d8",
+        "637b00c38af858f9d23dd40a",
+        "quang123",
+        "phiem123"
+      ],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1669287826920"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1669287826920"
+        }
+      },
+      "__v": 0
+    }
+  ]
+}
