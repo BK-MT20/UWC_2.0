@@ -9,6 +9,11 @@ function Navbar() {
             path: '/today',
             Icon: ClockCircleOutlined
         },
+        // {
+        //     text: 'Checkin',
+        //     path: '/checkin',
+        //     Icon: ClockCircleOutlined
+        // },
         {
             text: 'Calendar',
             path: '/calendar',
