@@ -23,16 +23,19 @@ function Login() {
               res.username === values.username &&
               res.password === values.password
             ) {
+              
+              const id=res.id
+              // console.log(res.id)
+              setAuth({username,password,id})
               return res;
+
+             
             }
           });
           if (user.length === 0) {
             message.error("Please check your username and password carefully");
-          } else {
-            setAuth(user);
-            console.log(auth);
-
-            navigate("/today");
+          }else {
+            navigate('/today')
           }
         },
         (err) => {

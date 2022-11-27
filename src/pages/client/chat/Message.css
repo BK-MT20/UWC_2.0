@@ -1,0 +1,16 @@
+
+.message{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.message.own{
+   
+    align-items: flex-end;
+}
+.messageText{
+    margin-left: 10px;
+}
+.messageimg-own{
+    display: none;
+}
