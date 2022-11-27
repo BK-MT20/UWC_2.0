@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavBar, Space, Toast, Avatar, ImageViewer, Button } from 'antd-mobile'
 import { SearchOutline, MoreOutline, CloseOutline } from 'antd-mobile-icons'
-import './checkin.css'
+import './checkout.css'
 import { LeftOutline } from 'antd-mobile-icons'
 
 const demoAvatarImages = [
@@ -32,7 +32,7 @@ const demoAvatarImages = [
 //   )
 // }
 
-function Checkin() {
+function Checkout() {
   const back = () => {
 
   }
@@ -56,7 +56,7 @@ function Checkin() {
         </a>
       </div>.
       <div className="content">
-        <div className="first">YOUR QR CODE CHECKIN HERE</div>
+        <div className="first">YOUR QR CODE CHECK-OUT HERE</div>
         <div className="second">
           <img src="https://luatbaoloi.com/phaply/wp-content/uploads/2018/01/ma-qrcode-luatbaoloi.com_.png"></img>
         </div>
@@ -66,4 +66,4 @@ function Checkin() {
   )
 }
 
-export default Checkin
+export default Checkout
