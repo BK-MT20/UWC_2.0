@@ -28,19 +28,21 @@ function Today() {
         }
     }
   
-    return (
-        <div className="container">
-            <div className="heading">TODAY</div>
-            <div className="content1">
-                <div className="hinhanh">
-                    <img alt=""
-                        src="https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-green-fresh-green-environmentally-friendly-city-advertising-background-cityadvertising-backgrounddisplay-board-image_81033.jpg"
-                        width="100%"
-                        height="100%"
-                    />
-                </div>
-            </div>
-            {/* <div className="content2">
+
+  return (
+    <div className="container">
+      <div className="heading">TODAY</div>
+      <div className="content1">
+        <div className="hinhanh">
+          <img
+            alt=""
+            src="https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-green-fresh-green-environmentally-friendly-city-advertising-background-cityadvertising-backgrounddisplay-board-image_81033.jpg"
+            width="100%"
+            height="100%"
+          />
+        </div>
+      </div>
+      {/* <div className="content2">
                 {/* <img
                     alt=""
                     className="hinhanh2"
@@ -50,7 +52,7 @@ function Today() {
                     <p className="van1">Garbage collection</p>
 
                 </div> */}
-                {/* <div title='配合列表使用' padding='0'>
+      {/* <div title='配合列表使用' padding='0'>
                     <List>
                         <List.Item
                             prefix={<Avatar src={demoAvatarImages[3]} />}
@@ -61,11 +63,11 @@ function Today() {
                     </List>
                 </div>
                 <div className="Box__checkbox"> */}
-                    {/* <label className="container1">
+      {/* <label className="container1">
                         <input type="radio" name="checkbox-checked" checked />
                         <span class="checkmark"></span>
                     </label> */}
-                    {/* <CheckCircleOutline fontSize={40} color='#76c6b8' />
+      {/* <CheckCircleOutline fontSize={40} color='#76c6b8' />
 
                 </div>
             </div> */} 
@@ -96,4 +98,4 @@ function Today() {
     )
 }
 
-export default Today
+export default Today;
