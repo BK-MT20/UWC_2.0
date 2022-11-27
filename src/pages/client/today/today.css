@@ -1,14 +1,15 @@
-.container{
+.container {
     width: 100%;
     height: 100%;
     background-color: white;
-    box-sizing:  border-box;
+    box-sizing: border-box;
     /* background-image: linear-gradient(225deg, #edf0f3 30%, #baefbf 70%); */
 }
-.heading{
+
+.heading {
     width: 100%;
     height: 20%;
-    
+
     background-image: linear-gradient(225deg, #edf0f3 30%, #c6d3e6 70%);
     display: flex;
     justify-content: center;
@@ -16,17 +17,19 @@
     font-size: 80px;
     font-family: 'Playfair Display', serif;
 }
-.content1{
+
+.content1 {
     width: 100%;
     height: 40%;
     background-color: rgba(222, 227, 222, 0.979);
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     /* background-image: linear-gradient(90deg, #24a47e 50%, #24561b 50%); */
 }
-.hinhanh{
+
+.hinhanh {
     /* padding-top: 25px; */
     /* margin-top: 50px; */
     width: 100%;
@@ -36,39 +39,44 @@
     justify-content: center;
     align-items: center;
 }
-.content2{
+
+.content2 {
     margin-top: 25px;
     width: 100%;
-   height: 10%;
+    height: 10%;
     /* background-image: linear-gradient(225deg, #edf0f3 30%, #baefbf 70%); */
     background-color: white;
     display: flex;
     justify-content: space-between;
 }
-.hinhanh2{
+
+.hinhanh2 {
     border-radius: 100px;
     box-shadow: rgba(25, 27, 25, 0.979);
 }
-.doanvan{
+
+.doanvan {
     display: block;
     justify-content: center;
     align-items: center;
-    
+
     border-radius: 5px;
 }
-.van2{
+
+.van2 {
     justify-content: center;
 }
 
-.Box__checkbox{
+.Box__checkbox {
     width: 10%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-.container1{
+
+.container1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,12 +90,14 @@
     display: grid;
     grid-template-columns: 1em auto;
     gap: 0.5em;
-  }
-.van1{
+}
+
+.van1 {
     font-family: system-ui, sans-serif;
     font-size: 24px;
 }
-.checkin-checkout{
+
+.checkin-checkout {
     width: 100%;
     /* height: 100%; */
     display: flex;
@@ -97,26 +107,56 @@
 
     /* background-image: linear-gradient(225deg, #edf0f3 30%, #baefbf 70%); */
 }
-.btn-background-circle{
-    width: 30%;
+
+.btn-background-circle {
+    width: 50%;
+    height:50px;
     background-color: rgb(11, 14, 12);
     color: rgb(255, 254, 254);
     font-size: 20px;
     border-radius: 20px;
 }
-.btn-background-slide{
-    width: 30%;
+
+.btn-background-slide {
+    width: 50%;
     font-size: 20px;
+    height:50px;
     background-color: rgb(22, 26, 23);
     color: rgb(255, 254, 254);
     border-radius: 20px;
 }
-.firstline{
-    /* font-size: 30px; */
-    padding:0;
+
+.conten2 {
+    
+    margin-top: 10px;
+    border-style: groove;
+    border-color: rgb(15, 9, 7);
+    border-width: 4px;
+    border-radius: 20px;
+    
 }
-.secondline{
-    margin: 0;
-    padding: 0;
+.section{
+    margin-left: 15px;
+}
+.firstline {
+    font-size: 50px;
+    font-weight: 600;
+    font-family: "Times New Roman", Times, serif;
+
+}
+
+.secondline {
+    font-family: "Times New Roman", Times, serif;
+    /* margin: 50px; */
+    font-size: 30px;
+    font-weight: 600;
     /* font-size: 30px; */
+}
+
+.thirdline {
+    font-weight: 400;
+}
+
+.fifthline {
+    font-weight: 600;
 }
