@@ -8,13 +8,16 @@ import FormItem from "antd/es/form/FormItem";
 import UseAuth from "../../../hooks/UseAuth";
 const HomeMess = ({ own }) => {
   const scrollRef = useRef();
-  const { auth } = UseAuth();
+  const { auth, setAuth } = UseAuth();
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const { form } = Form.useForm();
   const [search, setSearch] = useState(null);
   const [messages, setMessages] = useState(null);
   const [currentChat, setcurrentChat] = useState(null);
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    setAuth(user);
   }, []);
 
   useEffect(() => {
@@ -61,36 +64,36 @@ const HomeMess = ({ own }) => {
             <Message own={false} />
           </div>
         </div>
-      
-      <div className="type-mess">
-        <Form className="form-mess" form={form}>
-          <FormItem>
-            <Input
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-              value={search}
-              size="normal"
-              placeholder="type messenger"
-            />
-          </FormItem>
-          <Form.Item className="send-message">
-            <Button
-              style={{
-                width: "100%",
-                backgroundColor: "#7DA863",
-                borderRadius: "10px",
-                border: "1px solid #7DA863",
-                // color: 'white'
-              }}
-              type=""
-              htmlType="submit"
-            >
-              Send
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
+
+        <div className="type-mess">
+          <Form className="form-mess" form={form}>
+            <FormItem>
+              <Input
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
+                value={search}
+                size="normal"
+                placeholder="type messenger"
+              />
+            </FormItem>
+            <Form.Item className="send-message">
+              <Button
+                style={{
+                  width: "100%",
+                  backgroundColor: "#7DA863",
+                  borderRadius: "10px",
+                  border: "1px solid #7DA863",
+                  // color: 'white'
+                }}
+                type=""
+                htmlType="submit"
+              >
+                Send
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
       </div>
     </>
   );
