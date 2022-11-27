@@ -5,7 +5,7 @@ import axios from 'axios'
 import UseAuth from "../../../hooks/UseAuth";
 import { current } from "@reduxjs/toolkit";
 
-const Message = ({messages, own }) => {
+const Message = ({own }) => {
   const { auth } = UseAuth();
   const [currentChat, setcurrentChat] = useState(null)
  
@@ -29,7 +29,7 @@ const Message = ({messages, own }) => {
           style={{
             backgroundColor: "#f5f5f5",
           }}
-        >
+        >Alo
           {/* {messages.text} */}
         
         </Button>
