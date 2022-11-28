@@ -1,5 +1,5 @@
 import "./login.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
@@ -23,15 +23,20 @@ function Login() {
               res.username === values.username &&
               res.password === values.password
             ) {
+              const id = res.id;
+              // console.log(res.id)
+              localStorage.setItem(
+                "user",
+                JSON.stringify({ username, password, id })
+              );
+              setAuth(JSON.parse(localStorage.getItem("user")));
+
               return res;
             }
           });
           if (user.length === 0) {
             message.error("Please check your username and password carefully");
           } else {
-            setAuth(user);
-            console.log(auth);
-
             navigate("/today");
           }
         },
@@ -43,6 +48,8 @@ function Login() {
       console.log(err);
     }
   };
+  // console.log(auth);
+
   return (
     <div className="overlay">
       <div className="form">
