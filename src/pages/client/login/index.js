@@ -63,6 +63,7 @@ function Login() {
               ]}
             >
               <Input
+                className="inputuser"
                 value={username}
                 prefix={<UserOutlined className="site-form-item-icon" />}
                 placeholder="Username"
@@ -82,6 +83,7 @@ function Login() {
               ]}
             >
               <Input.Password
+                className="inputpassword"
                 value={password}
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 placeholder="Password"
@@ -100,10 +102,20 @@ function Login() {
                 type="primary"
                 htmlType="submit"
               >
-                Submit
+                Login
               </Button>
             </Form.Item>
           </Form>
+          <div class="other">
+                    
+                    <button class="btn submits frgt-pass">Forgot Password?</button>
+                   
+                    <button class="btn submits sign-up">Sign Up
+                      
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    </button>
+                   
+                </div>
         </div>
       </div>
     </div>

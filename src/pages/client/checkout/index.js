@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import { NavBar, Space, Toast, Avatar, ImageViewer, Button } from 'antd-mobile'
-import { SearchOutline, MoreOutline, CloseOutline } from 'antd-mobile-icons'
+
+import { NavBar, Toast, Avatar, Result } from 'antd-mobile'
+
+import { SmileOutline } from 'antd-mobile-icons'
 import './checkout.css'
-import { LeftOutline } from 'antd-mobile-icons'
+// import { LeftOutline } from 'antd-mobile-icons'
 
 const demoAvatarImages = [
   'https://images.unsplash.com/photo-1548532928-b34e3be62fc6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
@@ -33,9 +34,11 @@ const demoAvatarImages = [
 // }
 
 function Checkout() {
-  const back = () => {
-
-  }
+  const back = () =>
+    Toast.show({
+      content: '点击了返回区域',
+      duration: 1000,
+    })
 
   const right = (
     <div style={{ fontSize: 24 }}>
@@ -49,16 +52,24 @@ function Checkout() {
 
   return (
     <div className="container3">
-      <div title='自定义右侧区域' className="navbar" padding='0'>
-        <a href="/today" class="icon-block">
-          <i class="icon-home icon-4x"></i>
-          <span className="Back">Back</span>
+      <div title='自定义右侧区域' className="navbarr" padding='0'>
+        <a href="/today">
+          <NavBar onBack={back} right={right}></NavBar>
         </a>
       </div>.
       <div className="content">
-        <div className="first">YOUR QR CODE CHECK-OUT HERE</div>
+        <div className="firsttt">
+        <Result
+          status='warning'
+          title='Check-Out QR code here'
+          description='After checkin, please checkout to update the system'
+        />
+        </div>
         <div className="second">
-          <img src="https://luatbaoloi.com/phaply/wp-content/uploads/2018/01/ma-qrcode-luatbaoloi.com_.png"></img>
+          <img src="https://cdn.britannica.com/17/155017-050-9AC96FC8/Example-QR-code.jpg"
+            height="20%"
+            width="60%">         
+          </img>
         </div>
       </div>
     </div>

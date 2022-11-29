@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
 .overlay {
   height: 100%;
   width: 100%;
   /* background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%); */
 }
 .form {
+      font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
   width: 375px;
   min-height: 667px;
   /* height: 100%; */
@@ -39,49 +43,7 @@ header p {
   letter-spacing: 0.05em;
 }
 
-.input-item {
-  background: #fff;
-  color: #333;
-  padding: 14.5px 0px 15px 9px;
-  border-radius: 5px 0px 0px 5px;
-}
-#eye {
-  background: #fff;
-  color: #333;
 
-  margin: 5.9px 0 0 0;
-  margin-left: -20px;
-  padding: 15px 9px 19px 0px;
-  border-radius: 0px 5px 5px 0px;
-
-  float: right;
-  position: relative;
-  right: 1%;
-  top: -0.2%;
-  z-index: 5;
-
-  cursor: pointer;
-}
-input[class="form-input"] {
-  width: 270px;
-  height: 18px;
-
-  margin-top: 2%;
-  padding: 15px;
-
-  font-size: 16px;
-  font-family: "Abel", sans-serif;
-  color: #5e6472;
-
-  outline: none;
-  border: none;
-
-  border-radius: 0px 5px 5px 0px;
-  transition: 0.2s linear;
-}
-input[id="txt-input"] {
-  width: 270px;
-}
 /* focus  */
 input:focus {
   transform: translateX(-2px);
@@ -122,15 +84,6 @@ input:focus {
     padding-right: 60px;
 } */
 /* Submits */
-.submits {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* float: left; */
-  /* flex-direction: column; */
-  margin-left: 2%;
-}
 
 /*       Forgot Password button FAF3DD  */
 .frgt-pass {
@@ -138,13 +91,8 @@ input:focus {
 }
 
 /*     Sign Up button  */
-.sign-up {
-  background: #b8f2e6;
-}
 
-.log-in {
-  width: 100%;
-}
+
 /* buttons hover */
 button:hover {
   transform: translatey(3px);
@@ -162,4 +110,35 @@ button:hover {
   100% {
     transform: translateY(5px);
   }
+}
+
+.submits {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* float: left; */
+  /* flex-direction: column; */
+  margin-left: 2%;
+}
+button {
+  display: inline-block;
+  color: #252537;
+
+  width: 280px;
+  height: 50px;
+
+  padding: 0 20px;
+  background: #fff;
+  border-radius: 5px;
+  
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s linear;
+  
+  margin: 7% auto;
+  letter-spacing: 0.05em;
 }

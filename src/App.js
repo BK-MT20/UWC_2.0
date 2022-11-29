@@ -6,6 +6,7 @@ import Chat from './pages/client/chat';
 import Layout from './pages/client/Layout';
 import Settings from './pages/client/settings';
 import Today from './pages/client/today';
+import Todaymot from './pages/client/todaymot';
 import Login from './pages/client/login';
 import Checkin from './pages/client/checkin';
 import Checkout from './pages/client/checkout';
@@ -22,6 +23,7 @@ function App() {
           <Route path='/checkin' element={<Checkin />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/today' element={<Today />}></Route>
+          <Route path='/todaymot' element={<Todaymot />}></Route>
           <Route path='/calendar' element={<Calendar />}></Route>
           <Route path='/chat' element={<Chat />}></Route>
           <Route path='/settings' element={<Settings />}></Route>
