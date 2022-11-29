@@ -28,19 +28,14 @@ const Chat = () => {
       await axios
         .get("http://localhost:3000/conversations")
         .then((res) => {
-          const conversation = res.data.filter(
-            (co) => co.members.find((m) => m === auth.id)
-            //  if(myId!== auth.id){
-            //        return myId;
-            //  }
-            //  console.log(myId)
+          const conversation = res.data.filter((co) =>
+            co.members.find((m) => m === auth.id)
           );
 
           if (search) {
             setConversations(
-              conversations.filter(
-                (co) => co.members.find((m) => m.toLowerCase().includes(search))
-                // console.log(co.members.find((m) => m.toLowerCase().includes(search)))
+              conversations.filter((co) =>
+                co.members.find((m) => m.toLowerCase().includes(search))
               )
             );
           } else {
@@ -53,18 +48,11 @@ const Chat = () => {
     getConversations();
   }, [search, auth.id]);
   useEffect(() => {
-    const getMessages = async () => {
-      try {
-        const res = await axios.get("http://localhost:3000/message");
-        // console.log(res)
-        // console.log(currentChat);
-        // setMessages(res.data)
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getMessages();
-  }, []);
+    localStorage.setItem("currentChat", JSON.stringify(currentChat));
+    if (currentChat) {
+      navigate("/chat/mess");
+    }
+  }, [currentChat]);
 
   return (
     <>
@@ -91,7 +79,7 @@ const Chat = () => {
                 key={`${c._id}-${idx}`}
                 onClick={() => {
                   setcurrentChat(c);
-                  navigate("/chat/mess");
+                  // console.log(JSON.parse(localStorage.getItem("currentChat")));
                 }}
               >
                 <Conversations conversation={c} currentUser={auth.id} />

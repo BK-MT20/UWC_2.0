@@ -1,38 +1,23 @@
-import React,{useEffect,useState,useRef} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Message.css";
 import { Avatar, Button } from "antd";
-import axios from 'axios'
-import UseAuth from "../../../hooks/UseAuth";
-import { current } from "@reduxjs/toolkit";
+import axios from "axios";
 
-const Message = ({own }) => {
-  const { auth } = UseAuth();
-  const [currentChat, setcurrentChat] = useState(null)
- 
-  const scrollRef = useRef();
-  
- 
+const Message = ({ message, own }) => {
   return (
-   
     <div className={own ? "message own" : "message"}>
       <div className="messTop">
         <Avatar
+          src="https://ss-images.saostar.vn/wp700/pc/1613810558698/Facebook-Avatar_3.png"
           className={own ? "messageimg-own" : "messageimg"}
           style={{
             color: "#f56a00",
             backgroundColor: "#fde3cf",
           }}
         ></Avatar>
-        <Button
-          className="messageText"
-          shape="round"
-          style={{
-            backgroundColor: "#f5f5f5",
-          }}
-        >Alo
-          {/* {messages.text} */}
-        
-        </Button>
+        <span className={own ? "messageText-own" : "messageText"}>
+          {message.text}
+        </span>
       </div>
     </div>
   );

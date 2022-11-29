@@ -1,5 +1,5 @@
-.homemess{
- height: 100%;
+.homemess {
+  height: 100%;
   background-color: white;
 }
 .header-mess {
@@ -8,9 +8,7 @@
   width: 90%;
   height: 10vh;
   justify-content: space-between;
-  margin-top: 20px;
-  
-  
+  padding-top: 10px;
 }
 
 .avatar {
@@ -37,7 +35,6 @@
   font-weight: bold;
 }
 .chat-type {
-  
   width: 90%;
   margin: auto;
   height: 40px;
@@ -64,20 +61,22 @@
   margin-top: 5px;
 }
 .type-mess {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   width: 90%;
   margin: auto;
- 
 }
-.form-mess{
+.form-mess {
   display: flex;
+  /* width: 100%; */
   justify-content: space-between;
 }
-.type{
+.input-message {
+  width: 22rem !important;
+}
+.type {
   width: 80%;
 }
-.send-message{
+.send-message {
   text-align: right;
 }
-

@@ -1,67 +1,55 @@
-*{
-    margin:0;
-    padding: 0;
-   
+* {
+  margin: 0;
+  padding: 0;
 }
-.chat{
-    background-color: white;
-    height: 100vh;
+.chat {
+  background-color: white;
+  height: 100vh;
 }
-.header{
-    font-size: 30px;
-    width: 90%;
-    color: rgb(45, 147, 194);
-    margin: auto;
-    font-weight: bold;
-    padding-top: 20px;
-    padding-bottom: 20px;
-   
-    
+.header {
+  font-size: 30px;
+  width: 90%;
+  color: rgb(45, 147, 194);
+  margin: auto;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.search{
-    width: 90%;
-   align-items: center;
-   margin:auto;
-  
-    
+.search {
+  width: 90%;
+  align-items: center;
+  margin: auto;
 }
-.body{
-    color:black;
-    background-color: white;
-    width: 90%;
-    align-items: center;
-    margin:auto;
-    margin-top:20px;
-    
-   
-    
-   
+.body {
+  color: black;
+  background-color: white;
+  width: 90%;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
 }
-.avatar{
-    margin-top: 15px;
-    width: 20%;
-    height: 100%;
-    align-items: center;
-   
+.avatar {
+  margin-top: 15px;
+  /* width: 20%; */
+  height: 100%;
 }
-.form-search{
-    width: 90%;
+.form-search {
+  width: 90%;
 }
-.chat-body{
-    width: 70%;
-    display: block;
-    padding-left: 10px;
-    height: 10vh;
-    
+.chat-body {
+  width: 70%;
+  display: block;
+  padding-left: 10px;
+  height: 10vh;
 }
-.chat-conver{
-   color:black;
-    padding-bottom: 10px;
-    margin-top: 10px;
+.chat-conver {
+  color: black;
+  padding-bottom: 10px;
+  margin-top: 10px;
 
-    font-size: 20px;
+  font-size: 20px;
 }
-a{
-    text-decoration: none;
-    color:black;
+a {
+  text-decoration: none;
+  color: black;
 }
