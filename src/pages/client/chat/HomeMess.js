@@ -7,31 +7,54 @@ import { LeftOutlined } from "@ant-design/icons";
 import FormItem from "antd/es/form/FormItem";
 import UseAuth from "../../../hooks/UseAuth";
 const HomeMess = ({ own }) => {
-  const scrollRef = useRef();
   const { auth, setAuth } = UseAuth();
   const user = JSON.parse(localStorage.getItem("user"));
 
   const { form } = Form.useForm();
-  const [search, setSearch] = useState(null);
-  const [messages, setMessages] = useState(null);
-  const [currentChat, setcurrentChat] = useState(null);
-  useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
-    setAuth(user);
-  }, []);
+  const [newMessage, setNewMessage] = useState(null);
+  const scrollRef = useRef();
 
+  const [currentChat, setcurrentChat] = useState(null);
+  const [messages, setMessages] = useState(null);
+  const cur = JSON.parse(localStorage.getItem("currentChat"));
+  const friend = cur.members.filter((c) => c !== auth.username);
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/message");
-
-        setMessages(res.data);
+        let response = await axios.get("http://localhost:3000/message");
+        response = response.data.filter(
+          (r) => r.conversationId === currentChat?.id
+        );
+        setMessages(response);
+        // console.log(response, auth);
       } catch (err) {
         console.log(err);
       }
     };
     getMessages();
   }, [currentChat]);
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    setAuth(user);
+    setcurrentChat(cur);
+  }, []);
+
+  const onFinish = () => {
+    axios
+      .post("http://localhost:3000/message", {
+        sender: auth.username,
+        text: newMessage,
+        conversationId: currentChat.id,
+      })
+      .then((res) => {
+        // console.log(res.data, currentChat.id);
+        setMessages([...messages, res.data]);
+        setNewMessage(null);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -42,53 +65,42 @@ const HomeMess = ({ own }) => {
               <LeftOutlined />
             </a>
           </div>
-          <div className="name-people">Hoàng Phiếm</div>
+          <div className="name-people">{friend[2]}</div>
           <div className="avatar">
             <Avatar
+              src="https://ss-images.saostar.vn/wp700/pc/1613810558698/Facebook-Avatar_3.png"
               style={{
                 color: "#f56a00",
                 backgroundColor: "#fde3cf",
-                width: "70%",
-                height: "70%",
               }}
             ></Avatar>
           </div>
         </div>
         <div className="body-mess">
           <div className="chat-type">
-            <Message own={true} />
-            <Message own={false} />
-            <Message own={true} />
-            <Message own={false} />
-            <Message own={true} />
-            <Message own={false} />
+            {messages?.map((m) => (
+              <div key={m._id} ref={scrollRef}>
+                <Message message={m} own={m.sender === auth.username} />
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="type-mess">
-          <Form className="form-mess" form={form}>
+          <Form className="form-mess" form={form} onFinish={onFinish}>
             <FormItem>
               <Input
                 onChange={(e) => {
-                  setSearch(e.target.value);
+                  setNewMessage(e.target.value);
                 }}
-                value={search}
+                className="input-message"
+                value={newMessage}
                 size="normal"
                 placeholder="type messenger"
               />
             </FormItem>
             <Form.Item className="send-message">
-              <Button
-                style={{
-                  width: "100%",
-                  backgroundColor: "#7DA863",
-                  borderRadius: "10px",
-                  border: "1px solid #7DA863",
-                  // color: 'white'
-                }}
-                type=""
-                htmlType="submit"
-              >
+              <Button type="primary" htmlType="submit">
                 Send
               </Button>
             </Form.Item>
