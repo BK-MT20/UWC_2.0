@@ -3,7 +3,7 @@ import { NavBar, Space, Toast, Avatar, ImageViewer, Button } from 'antd-mobile'
 import { SearchOutline, MoreOutline, CloseOutline } from 'antd-mobile-icons'
 import './checkout.css'
 import { LeftOutline } from 'antd-mobile-icons'
-
+import { LeftOutlined} from '@ant-design/icons'
 const demoAvatarImages = [
   'https://images.unsplash.com/photo-1548532928-b34e3be62fc6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
   'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
@@ -48,17 +48,17 @@ function Checkout() {
   )
 
   return (
-    <div className="container3">
-      <div title='自定义右侧区域' className="navbar" padding='0'>
-        <a href="/today" class="icon-block">
-          <i class="icon-home icon-4x"></i>
-          <span className="Back">Back</span>
-        </a>
-      </div>.
+    <div className="checkin">
+     <div className='headercheckin'>
+      <a href='/today' className='icon'>
+      <LeftOutlined />
+      </a>
+     </div>
       <div className="content">
-        <div className="first">YOUR QR CODE CHECK-OUT HERE</div>
-        <div className="second">
-          <img src="https://luatbaoloi.com/phaply/wp-content/uploads/2018/01/ma-qrcode-luatbaoloi.com_.png"></img>
+        <div className="QR">YOUR QR CODE CHECKOUT HERE</div>
+        <div className="QRlogo">
+
+          <img className='QRimg' src="https://i.pinimg.com/564x/60/c1/4a/60c14a43fb4745795b3b358868517e79.jpg"/>
         </div>
       </div>
     </div>
