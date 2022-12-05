@@ -1,6 +1,12 @@
 .homemess {
-  height: 100%;
+  /* height: 100%; */
   background-color: white;
+
+  height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
 }
 .header-mess {
   display: flex;
@@ -14,6 +20,7 @@
 .avatar {
   text-align: right;
   margin-right: 0px;
+  margin-top: 15px;
 }
 .body-mess {
   margin-top: 20px;
@@ -57,7 +64,7 @@
 }
 
 .content-mess {
-  margin-left: 5px;
+  /* margin-left: 5px; */
   margin-top: 5px;
 }
 .type-mess {
@@ -69,14 +76,19 @@
 .form-mess {
   display: flex;
   /* width: 100%; */
+
   justify-content: space-between;
 }
 .input-message {
-  width: 22rem !important;
+  width: 17rem !important;
 }
 .type {
-  width: 80%;
+  width: 90%;
 }
 .send-message {
   text-align: right;
+  
+}
+.button-send{
+  background-color:rgb(18, 127, 25);
 }

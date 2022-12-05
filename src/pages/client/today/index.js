@@ -61,7 +61,8 @@ function Today() {
       </div>
       <div className="progess">
         <h3>Task</h3>
-        <Progress type="circle" percent={10} format={(percent) => `${percent} %`} />
+        <div className="task" > <Progress type="circle" percent={100} format={(percent) => `${percent} %`} /></div>
+       
         {/* <Progress percent={50} status="active" />
         <Progress percent={70} status="active" />
         <Progress percent={100} /> */}

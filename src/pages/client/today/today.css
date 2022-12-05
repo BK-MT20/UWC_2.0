@@ -37,7 +37,10 @@
     align-items: center;
 }
 
-
+.task{
+    align-items: center;
+    margin: auto;
+}
 
 .checkin-checkout {
     width: 100%;
