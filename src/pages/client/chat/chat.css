@@ -3,14 +3,14 @@
   padding: 0;
 }
 .chat {
-  background-color: #caf5d3	;
- 
+  /* background-color: #caf5d3; */
   height: 100vh;
+  margin: auto;
 }
 .header {
   font-size: 30px;
   width: 90%;
-  color:rgb(10, 105, 16);
+  color: rgb(10, 105, 16);
   margin: auto;
   font-weight: bold;
   padding-top: 20px;
@@ -23,11 +23,10 @@
 }
 .body {
   color: black;
- 
+
   /* width: 90%; */
   align-items: center;
   margin: auto;
- 
 }
 .avatar {
   /* margin-top: 15px; */
@@ -35,10 +34,10 @@
   height: 100%;
 }
 .form-search {
-  width: 90%;
+  /* width: 90%; */
 }
 .chat-body {
-  color:rgb(10, 105, 16);
+  color: rgb(10, 105, 16);
   /* width: 90%; */
   /* display: block; */
   /* padding-left: 10px; */

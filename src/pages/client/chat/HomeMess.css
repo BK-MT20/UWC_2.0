@@ -24,8 +24,8 @@
 }
 .body-mess {
   margin-top: 20px;
-  margin-bottom: 20px;
-  height: 70%;
+  overflow-y: scroll;
+  height: 65%;
 }
 .out {
   margin-top: 20px;
@@ -42,7 +42,7 @@
   font-weight: bold;
 }
 .chat-type {
-  width: 90%;
+  width: 94%;
   margin: auto;
   height: 40px;
   margin-bottom: 10px;
@@ -64,31 +64,60 @@
 }
 
 .content-mess {
-  /* margin-left: 5px; */
+  margin-left: 5px;
   margin-top: 5px;
 }
 .type-mess {
-  /* display: flex;
-  justify-content: space-between; */
-  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   margin: auto;
 }
 .form-mess {
   display: flex;
+  /* margin: auto; */
   /* width: 100%; */
-
   justify-content: space-between;
 }
 .input-message {
-  width: 17rem !important;
+  margin-left: 20px;
+  width: 21rem !important;
 }
 .type {
   width: 90%;
 }
 .send-message {
   text-align: right;
-  
 }
-.button-send{
-  background-color:rgb(18, 127, 25);
+.button-send {
+  background-color: rgb(18, 127, 25);
+}
+
+@media screen and (min-width: 470px) {
+  .input-message {
+    width: 22rem !important;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .input-message {
+    width: 18rem !important;
+  }
+}
+@media screen and (max-width: 393px) {
+  .input-message {
+    width: 17rem !important;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .input-message {
+    width: 16rem !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .input-message {
+    width: 15rem !important;
+  }
 }

@@ -83,7 +83,6 @@ const Chat = () => {
                 }}
               >
                 <Conversations conversation={c} currentUser={auth.id} />
-                
               </div>
             ))}
             <div></div>
