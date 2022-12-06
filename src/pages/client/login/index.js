@@ -1,5 +1,5 @@
 import "./login.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
@@ -23,15 +23,20 @@ function Login() {
               res.username === values.username &&
               res.password === values.password
             ) {
+              const id = res.id;
+              // console.log(res.id)
+              localStorage.setItem(
+                "user",
+                JSON.stringify({ username, password, id })
+              );
+              setAuth(JSON.parse(localStorage.getItem("user")));
+
               return res;
             }
           });
           if (user.length === 0) {
             message.error("Please check your username and password carefully");
           } else {
-            setAuth(user);
-            console.log(auth);
-
             navigate("/today");
           }
         },
@@ -43,16 +48,25 @@ function Login() {
       console.log(err);
     }
   };
+  // console.log(auth);
+
   return (
-    <div className="overlay">
+    <div className="login">
+      <div className="login-header">
+        <div className="text">
+        <h1>Welcome to</h1>
+        <h1>UWC 2.0</h1>
+        <p>Sign in to continue</p>
+        </div>
+       
+        {/* <img src="https://i.pinimg.com/564x/9d/9d/ef/9d9def01a4db9fad23d0aca705b667dd.jpg"/> */}
+      
+      </div>
       <div className="form">
-        <div className="con">
-          <header className="head-form">
-            <h2>Log in</h2>
-            <p>login here using your username and password</p>
-          </header>
-          <br></br>
-          <Form form={form} onFinish={onFinish}>
+      
+        <div className="form-login-body">
+          <Form form={form} onFinish={onFinish} className="form-login">
+            <h6>Username</h6>
             <Form.Item
               name="username"
               rules={[
@@ -64,15 +78,17 @@ function Login() {
             >
               <Input
                 value={username}
-                prefix={<UserOutlined className="site-form-item-icon" />}
+                size="large"
+                prefix={<UserOutlined />}
                 placeholder="Username"
                 onChange={(e) => {
                   setUsername(e.target.value);
                 }}
+                
               />
             </Form.Item>
-
-            <Form.Item
+<h6>Password</h6>
+            <Form.Item className="p"
               name="password"
               rules={[
                 {
@@ -82,30 +98,34 @@ function Login() {
               ]}
             >
               <Input.Password
+               size="large"
                 value={password}
-                prefix={<LockOutlined className="site-form-item-icon" />}
+                prefix={<LockOutlined />}
                 placeholder="Password"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
               />
             </Form.Item>
-            <Form.Item>
+            <Form.Item className="form-button">
               <Button
+              className="button"
                 style={{
                   width: "100%",
                   borderRadius: "10px",
                   border: "1px solid #7DA863",
+                  justifyContent:"center"
                 }}
-                type="primary"
+                shape="round"
+                size="large"
                 htmlType="submit"
               >
-                Submit
+                Sign in
               </Button>
             </Form.Item>
           </Form>
+          </div>
         </div>
-      </div>
     </div>
   );
 }

@@ -1,0 +1,94 @@
+.homemess {
+  /* height: 100%; */
+  background-color: white;
+
+  height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.header-mess {
+  display: flex;
+  margin: auto;
+  width: 90%;
+  height: 10vh;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.avatar {
+  text-align: right;
+  margin-right: 0px;
+  margin-top: 15px;
+}
+.body-mess {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 70%;
+}
+.out {
+  margin-top: 20px;
+}
+.avatar-mess {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+.name-people {
+  align-items: center;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.chat-type {
+  width: 90%;
+  margin: auto;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.my-chat-type {
+  width: 90%;
+  margin: auto;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.my-mess {
+  text-align: right;
+  margin-right: 0px;
+}
+.mess {
+  width: 70%;
+  height: 70%;
+}
+
+.content-mess {
+  /* margin-left: 5px; */
+  margin-top: 5px;
+}
+.type-mess {
+  /* display: flex;
+  justify-content: space-between; */
+  width: 90%;
+  margin: auto;
+}
+.form-mess {
+  display: flex;
+  /* width: 100%; */
+
+  justify-content: space-between;
+}
+.input-message {
+  width: 17rem !important;
+}
+.type {
+  width: 90%;
+}
+.send-message {
+  text-align: right;
+  
+}
+.button-send{
+  background-color:rgb(18, 127, 25);
+}

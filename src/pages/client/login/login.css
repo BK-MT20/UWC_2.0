@@ -1,165 +1,106 @@
-.overlay {
-  height: 100%;
+.login{
+  background-color:#caf5d3	;
+  color:black;
+  font-family: Palatino;
+  
+}
+.login-header{
+  background-image: url("https://i.pinimg.com/564x/b5/f1/a0/b5f1a0ddd59fb82a7c9d472f41efb3e2.jpg");
+  
+  color:rgb(18, 127, 25);
+  text-align: center;
   width: 100%;
-  /* background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%); */
+  height: 40%;
+  
+  background-attachment: fixed;  
+  background-size: cover;
+  background-size: 100% 50%;
+  
 }
-.form {
-  width: 375px;
-  min-height: 667px;
-  /* height: 100%; */
-  margin-top: 20px;
-  border-radius: 20px;
-  margin: 2% auto;
-  box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
-  padding: 2%;
-  background-image: linear-gradient(-225deg, #e3fdf5 50%, #ffe6fa 50%);
+@media (min-width: 600px) {
+  .login{
+    width: 100%;
+    height: 100vh;
+  }
+  .h1{
+    font-size: 50px;
+  }
+  .login-header{
+    background-image: url("https://i.pinimg.com/564x/b5/f1/a0/b5f1a0ddd59fb82a7c9d472f41efb3e2.jpg");
+    
+    color:rgb(18, 127, 25);
+    text-align: center;
+    width: 100%;
+    height: 40%;
+    
+    background-attachment: fixed;  
+   
+    background-size: 130% 50%;
+    
+  }
 }
-.con {
-  display: -webkit-flex;
-  /* display: flex; */
-
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-
-  margin: 0 auto;       
+@media (max-width: 600px) {
+  .login{
+    width: 100%;
+    height: 100vh;
+  }
+  .h1{
+    font-size: 30px;
+  }
 }
-header {
-  margin: 2% auto 10% auto;
+.text{
+  padding-top: 50px;
+}
+h1{
+  font-family: Palatino;
+  text-align: center;
+ 
+  font-weight: normal;
+  font-size: 35px;
+ 
+ 
+}
+img{
+  
+  width: 50%;
+  /* border-radius: 50%; */
+ margin: 20px;
+}
+p{
+  font-weight: normal;
+  padding-top: 10px;
+  font-family: Palatino;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+.form{
+  font-size: 35px;
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
+}
+.font-login-body{
+  width: 80%;
+}
+.form-button{
+  margin: auto;
+  padding-top: 10px;
   text-align: center;
 }
-header h2 {
-  font-size: 250%;
-  font-family: "Playfair Display", serif;
-  color: #3e403f;
+h6{
+  font-size: 15px;
+  font-weight: normal;
+  padding-bottom: 3px;
+
 }
-header p {
-  letter-spacing: 0.05em;
+.password{
+  padding-bottom: 20px;
 }
-
-.input-item {
-  background: #fff;
-  color: #333;
-  padding: 14.5px 0px 15px 9px;
-  border-radius: 5px 0px 0px 5px;
+.button{
+  background-color:rgb(10, 105, 16);
+  color:white;
+  margin: auto;
 }
-#eye {
-  background: #fff;
-  color: #333;
-
-  margin: 5.9px 0 0 0;
-  margin-left: -20px;
-  padding: 15px 9px 19px 0px;
-  border-radius: 0px 5px 5px 0px;
-
-  float: right;
-  position: relative;
-  right: 1%;
-  top: -0.2%;
-  z-index: 5;
-
-  cursor: pointer;
-}
-input[class="form-input"] {
-  width: 270px;
-  height: 18px;
-
-  margin-top: 2%;
-  padding: 15px;
-
-  font-size: 16px;
-  font-family: "Abel", sans-serif;
-  color: #5e6472;
-
-  outline: none;
-  border: none;
-
-  border-radius: 0px 5px 5px 0px;
-  transition: 0.2s linear;
-}
-input[id="txt-input"] {
-  width: 270px;
-}
-/* focus  */
-input:focus {
-  transform: translateX(-2px);
-  border-radius: 5px;
-}
-
-/* //////////////////////////////////////////// */
-/* //////////////////////////////////////////// */
-/* button {
-    margin-left: 10px;
-} */
-/* input[type="text"] {min-width: 250px;} */
-/* buttons  */
-/* button {
-    display: inline-block;
-    color: #252537;
-  
-    width: 100px;
-    height: 50px;
-  
-    padding: 0 20px;
-    background: #fff;
-    border-radius: 5px;
-    
-    outline: none;
-    border: none;
-  
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s linear;
-    
-    margin: 7% auto;
-    letter-spacing: 0.05em;
-} */
-/* Button{
-    width: 100%;
-    height: 100%;
-    padding-right: 60px;
-} */
-/* Submits */
-.submits {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* float: left; */
-  /* flex-direction: column; */
-  margin-left: 2%;
-}
-
-/*       Forgot Password button FAF3DD  */
-.frgt-pass {
-  background: transparent;
-}
-
-/*     Sign Up button  */
-.sign-up {
-  background: #b8f2e6;
-}
-
-.log-in {
-  width: 100%;
-}
-/* buttons hover */
-/* button:hover {
-  transform: translatey(3px);
-  box-shadow: none;
-} */
-
-/* buttons hover Animation */
-/* button:hover {
-  animation: ani9 0.4s ease-in-out infinite alternate;
-} */
-@keyframes ani9 {
-  0% {
-    transform: translateY(3px);
-  }
-  100% {
-    transform: translateY(5px);
-  }
+h2{
+  padding-bottom: 10px;
 }
