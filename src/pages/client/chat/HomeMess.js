@@ -100,7 +100,7 @@ const HomeMess = ({ own }) => {
               />
             </FormItem>
             <Form.Item className="send-message">
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" className="button-send">
                 Send
               </Button>
             </Form.Item>
