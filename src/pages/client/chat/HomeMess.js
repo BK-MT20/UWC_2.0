@@ -6,6 +6,7 @@ import axios from "axios";
 import { LeftOutlined } from "@ant-design/icons";
 import FormItem from "antd/es/form/FormItem";
 import UseAuth from "../../../hooks/UseAuth";
+import { UserOutlined } from "@ant-design/icons";
 const HomeMess = ({ own }) => {
   const { auth, setAuth } = UseAuth();
   const user = JSON.parse(localStorage.getItem("user"));
@@ -33,6 +34,7 @@ const HomeMess = ({ own }) => {
     };
     getMessages();
   }, [currentChat]);
+
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
     setAuth(user);
@@ -61,25 +63,19 @@ const HomeMess = ({ own }) => {
       <div className="homemess">
         <div className="header-mess">
           <div className="out">
-            <a href="/chat">
+            <a href="/chat" style={{ backgroundColor: "white" }}>
               <LeftOutlined />
             </a>
           </div>
           <div className="name-people">{friend[2]}</div>
           <div className="avatar">
-            <Avatar
-              src="https://ss-images.saostar.vn/wp700/pc/1613810558698/Facebook-Avatar_3.png"
-              style={{
-                color: "#f56a00",
-                backgroundColor: "#fde3cf",
-              }}
-            ></Avatar>
+            <Avatar icon={<UserOutlined />}></Avatar>
           </div>
         </div>
         <div className="body-mess">
           <div className="chat-type">
-            {messages?.map((m) => (
-              <div key={m._id} ref={scrollRef}>
+            {messages?.map((m, index) => (
+              <div key={`message-item-${m._id}-${index}`} ref={scrollRef}>
                 <Message message={m} own={m.sender === auth.username} />
               </div>
             ))}
@@ -87,7 +83,12 @@ const HomeMess = ({ own }) => {
         </div>
 
         <div className="type-mess">
-          <Form className="form-mess" form={form} onFinish={onFinish}>
+          <Form
+            className="form-mess"
+            form={form}
+            onFinish={onFinish}
+            layout="inline"
+          >
             <FormItem>
               <Input
                 onChange={(e) => {

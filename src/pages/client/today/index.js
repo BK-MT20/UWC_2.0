@@ -1,10 +1,11 @@
 import "./today.css";
 import { Time } from "./time.js";
 
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { CheckCircleOutline } from "antd-mobile-icons";
-import { Button, Space, Card, Progress, Popover } from "antd";
+import { Button, Space, Card, Progress, Popover, message } from "antd";
 import { Avatar, List } from "antd-mobile";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ClockCircleFill } from "antd-mobile-icons";
 const demoAvatarImages = [
   "https://images.unsplash.com/photo-1548532928-b34e3be62fc6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
@@ -15,11 +16,26 @@ const demoAvatarImages = [
 // const [messageApi, contextHolder] = message.useMessage();
 
 function Today() {
-  let [isActive, setIsActive] = useState(true);
+  const navigate = useNavigate();
 
- 
+  const [process, setProcess] = useState(0);
+  const [count, setCount] = useState(0);
 
-  console.log(isActive);
+  const timeProcess = () => {
+    const hour = new Date().getHours();
+    const minutes = new Date().getMinutes();
+    if (hour - 8) {
+      setCount(Math.floor(minutes / 6));
+      setProcess((hour - 8) * 10 + count);
+    } else {
+      setProcess(100);
+      setCount(0);
+    }
+  };
+  useEffect(() => {
+    timeProcess();
+  }, [process, count]);
+  console.log(count);
 
   return (
     <div className="container">
@@ -61,31 +77,43 @@ function Today() {
       </div>
       <div className="progess">
         <h3>Task</h3>
-        <div className="task" > <Progress type="circle" percent={100} format={(percent) => `${percent} %`} /></div>
-       
-        {/* <Progress percent={50} status="active" />
-        <Progress percent={70} status="active" />
-        <Progress percent={100} /> */}
+        <div className="task">
+          {" "}
+          <Progress
+            type="circle"
+            percent={process}
+            format={(percent) => `${percent} %`}
+          />
+        </div>
       </div>
       <div className="checkin-checkout">
         <Button
           className="button"
           shape="round"
-          href="./checkin"
-          // disabled={trangthai1}
-        
+          onClick={() => {
+            if (!localStorage.getItem("active")) {
+              localStorage.setItem("active", JSON.stringify(true));
+              navigate("/checkin");
+            } else {
+              message.error("You've already checked in!!");
+            }
+          }}
           size="large"
         >
           Check In
         </Button>
 
         <Button
-         className="button-checkout"
-          href="./checkout"
+          className="button-checkout"
           size="large"
+          onClick={() => {
+            if (!localStorage.getItem("active")) {
+              message.error("Please check in first!!");
+            } else {
+              navigate("/checkout");
+            }
+          }}
           shape="round"
-        
-         
         >
           Check Out
         </Button>
