@@ -14,9 +14,11 @@ import {
   GlobalOutlined,
   LogoutOutlined,
   InfoCircleOutlined,
+  RightOutlined,
 } from "@ant-design/icons";
 import UseAuth from "../../../hooks/UseAuth";
 import { useNavigate } from "react-router-dom";
+import { Button } from "antd-mobile";
 
 function Settings() {
   const { auth, setAuth } = UseAuth();
@@ -50,17 +52,16 @@ function Settings() {
     });
   };
   return (
-    <Space direction="vertical" style={{ width: "100%", padding: "0 16px" }}>
+    <Space direction="vertical" style={{ width: "100%", padding: "24px 16px" }}>
       <Typography.Title
-        level={2}
+        level={1}
         style={{
-          position: "fixed",
-          top: "0",
+          margin: "0 20px"
         }}
       >
         Settings
       </Typography.Title>
-      <Row justify="center" style={{ marginTop: "42px", padding: "16px 20px" }}>
+      <Row justify="center" style={{ marginTop: "12px", padding: "16px 20px" }}>
         <Col span={20}>
           <Space direction="vertical" align="center" style={{ width: "100%" }}>
             <Avatar size={96} icon={<UserOutlined />} />
@@ -81,10 +82,11 @@ function Settings() {
                 }
               }}
               avatar={
-                <item.icon style={{ fontSize: "20px", marginTop: "20px" }} />
+                <item.icon style={{ fontSize: "20px" }} />
               }
               title={item.title}
             />
+            <Button fill="none"><RightOutlined /></Button>
           </List.Item>
         )}
       />
